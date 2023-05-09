@@ -1,0 +1,96 @@
+Anonymous inner class is mainly used where we need to give implementation on the go.
+
+Lambda expression are one step ahead from anonymous , we can implementation in simple form when compared to anonymous
+
+Lambda Expression Key Notes:
+
+i)   n->return n*n;        ==> invalid
+ii)  n->{return n*n;};     ==> valid
+iii) n->{return n*n};      ==> invalid
+iv)  n->{return n*n}       ==> invalid
+v)   n->{n*n;};            ==> invalid
+vi)  n->n*n;			   ==> valid
+
+Explanations:
+
+i) Whenever we see return keyword we have to make sure its enclosed within {}.
+   Here even though its a single line, since return is used , so it should be enclosed within {}.
+  
+ii) We have return keyword, so it is inside{} ,its mandatory to have ; after body of statement and {} if return is used
+    ; also perfectly used so its valid
+    
+iii) Invalid because of missing semicolon after body of statement
+
+iv) Invalid because of missing semicolon both body and }
+
+v) here {} are used and no return keyword is used so its invalid
+
+vi) valid because no {} is used and return is only required when {} its used, so its valid
+
+
+Functional Interfaces:
+======================
+
+Normal Interface points:
+-----------------------
+
+* Interface methods are by default abstract and public 
+* Interface attributes are by default  public ,static and final
+* Interface can any number of unimplemented methods
+* No Implemented methods allowed
+
+
+Coming to functional interface
+
+what is functional interface?
+
+	If an interface has only one abstract method (SAM) , then it is called functional interface.
+	SAM is single abstract method
+	
+How to create an functional interface?
+
+	Any interface which has single abstract method ,then its functional interface, we can make use of annotation @FunctionalInterface
+	to inform comiler its a functional interface , so in normal interface it will allow you to create any number of unimplemented method
+	but when you use @FunctionalInterface annotation and if you create more than one abstract method in interface will throw compile
+	time error.
+	
+	
+	Additionally functional interface can have object class methods inside it and also can have default and static methods inside it 
+	
+	
+	We can any number of object class methods, defaults methods in functional interface and default method needs to implemented in functional interface
+
+	
+Diamond Problem:
+---------------
+	default method with multiple inheritance , when an class implements two interfaces which has same methods inside it 
+	In this case you need to override any one method in implementing class else use any method present in it
+	
+	this problem is called diamond problem where compiler dont have idea from which interface it needs to call the unique method
+	
+	
+Static Methods:
+==============
+
+
+ * Since 1.8 in addition with default methods, Java Introduced static methods to be defined in an interface
+
+* Static methods are useful to create utility functions within the interface. Few examples are Stream.of, Comparator.naturalOrder,Comparator.comparing
+
+* Interface's static method is by default not available for implemetation class. so we can't call the static methods present in interface with help of implementation class reference
+
+* Jave Interface static method is part of interface alone so we can't use it with implementation class objects
+
+* The only way to call the interface static method is through the interface name. like <InterfaceName.StaticMethodName>
+
+* Java interface static method is same as default methods except we can't override the static method in implementation classes.
+
+
+
+
+* 
+
+	
+	
+
+
