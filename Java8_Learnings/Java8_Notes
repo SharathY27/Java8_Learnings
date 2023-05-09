@@ -86,9 +86,14 @@ Static Methods:
 * Java interface static method is same as default methods except we can't override the static method in implementation classes.
 
 
+Lambda Expression:
+==================
 
+* To invoke/call/use a lambda expression functional interface is required.
 
-* 
+* If an interface that you are dealing is an functional interface means we can make use of lambda here
+
+* There are many built in functional interfaces in java 8
 
 	
 	
