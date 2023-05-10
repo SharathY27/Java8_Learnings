@@ -95,7 +95,37 @@ Lambda Expression:
 
 * There are many built in functional interfaces in java 8
 
-	
-	
+Functional Interfaces:
+=====================
 
+Function Interface = 1 input and 1 output
+Predicate Interface = boolean output
+Consumer Interface = 1 input no output
+	
+	
+ForEach function:
+================
+
+* In Java 8 we have forEach function which takes Consumer interface as argument (lower bound wildcard)
+
+* Lower bound Wildcard -> If we have a list which accepts Integer values and who else it can hold it ? Parent  ? Yes
+						 Parent of Integer class is Number,Object like that classes can hold Integer values
+						 <? super  A>
+						 
+* Upper bound wildcard -> which is nothing but which can hold child datatype of integer class
+						 <? extends A>
+						 
+						 
+Example: 
+=======
+		We have list of Integers , in which we need to print using forEach function, so we will use foreach function like
+list.forEach(<consumer interface of lower bound needs to be used>) which means we have Integers type list , now while creating 
+Consumer interface , we can create same with list containing Integer datatype or it parent datatype
+
+* Consumer<Integer> consumer = input -> System.out.println(input);  //will work
+* Consumer<Number> consumer1 = input -> System.out.println(input);	// will work Number is parent of Integer
+* Consumer<Object> consumer2 = input -> System.out.println(input);  // Will work Object is parent of integer
+
+	
+ 	
 
