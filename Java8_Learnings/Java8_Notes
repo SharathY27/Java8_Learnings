@@ -126,6 +126,17 @@ Consumer interface , we can create same with list containing Integer datatype or
 * Consumer<Number> consumer1 = input -> System.out.println(input);	// will work Number is parent of Integer
 * Consumer<Object> consumer2 = input -> System.out.println(input);  // Will work Object is parent of integer
 
+
+Imagine Like this:
+=================
+
+* We learn anonymous inner classes, as a way to give implementation on the go.
+* Then we used lambda expressions, better way than anonymous inner classes.
+* Now consider method reference as alternative syntax for writing lambdas to make it more readable.
+* when you have the implementation avaialble, use method reference.
+* when there is no implementation, go with lambdas.
+
+
 	
  	
 
